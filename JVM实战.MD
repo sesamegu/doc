@@ -50,7 +50,7 @@ e，BTrace 开源软件，Byte Trace，分析问题的神器<br/>
 
 * 5，CPU 100%
 代码地址：https://github.com/sesamegu/snippets/blob/master/src/main/java/com/mikegu/tools/JVM/CpuHighPractice.java <br/>
-分析：用top -p <pid> -H找到消费cpu的线程ID，在jstack中找到对于的线程ID，就能定位到cpu消耗在哪里 <br/>
+分析：用top -p pid -H找到消费cpu的线程ID，在jstack中找到对于的线程ID，就能定位到cpu消耗在哪里 <br/>
 解决：cpu100%很多时候是不合理的死循环，找到对应的逻辑进行调整 <br/>
 常见原因：死循环 <br/>
 
