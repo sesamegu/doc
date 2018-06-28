@@ -16,12 +16,12 @@
 ![image](https://github.com/sesamegu/doc/blob/master/tmp/J8.png?raw=true)
 
 ## 四、工具
-工欲善其事，必先利其器。这里简单介绍JVM领域必备工具，具体的工具用法在第五部分会涉及
-a，jstack   jdk 自带工具，用来dump JVM的堆栈
-b，jstat jdk 自带工具，用来查询GC的情况等
-c，jmap jdk 自带工具  用来dump heap和实时查看heap中的内容
-d，MAT  Eclipse 提供的分析JVM的Heap文件
-e，BTrace 开源软件，Byte Trace，分析问题的神器
+工欲善其事，必先利其器。这里简单介绍JVM领域必备工具，具体的工具用法在第五部分会涉及<br/>
+a，jstack   jdk 自带工具，用来dump JVM的堆栈 <br/>
+b，jstat jdk 自带工具，用来查询GC的情况等<br/>
+c，jmap jdk 自带工具  用来dump heap和实时查看heap中的内容<br/>
+d，MAT  Eclipse 提供的分析JVM的Heap文件<br/>
+e，BTrace 开源软件，Byte Trace，分析问题的神器<br/>
 
 
 ## 五、跟着例子学习
