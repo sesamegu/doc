@@ -12,7 +12,8 @@
 
 ## 三、理论知识
 没有理论知识，就不知道问题根源，所以理论知识是必要的，我这边就给两个图，大家可以网上学习相关知识：
-
+![image](https://github.com/sesamegu/doc/blob/master/tmp/JMM.png?raw=true)
+![image](https://github.com/sesamegu/doc/blob/master/tmp/J8.png?raw=true)
 
 ## 四、工具
 工欲善其事，必先利其器。这里简单介绍JVM领域必备工具，具体的工具用法在第五部分会涉及
@@ -25,7 +26,7 @@ e，BTrace 开源软件，Byte Trace，分析问题的神器
 
 ## 五、跟着例子学习
 我这边给出最常见的6个JVM的异常，具体参见下图：
-
+![image](https://github.com/sesamegu/doc/blob/master/tmp/企业微信截图_fbf7b5e0-ca49-41df-92a7-775ce765878a.png?raw=true)
 1，Heap OOM
 代码地址：
 分析：通过Mat分析内存
