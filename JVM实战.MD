@@ -27,39 +27,38 @@ e，BTrace 开源软件，Byte Trace，分析问题的神器<br/>
 ## 五、跟着例子学习
 我这边给出最常见的6个JVM的异常，具体参见下图：
 ![image](https://github.com/sesamegu/doc/blob/master/tmp/企业微信截图_fbf7b5e0-ca49-41df-92a7-775ce765878a.png?raw=true)
-1，Heap OOM
-代码地址：
-分析：通过Mat分析内存
+* 1，Heap OOM
+代码地址：https://github.com/sesamegu/snippets/blob/master/src/main/java/com/mikegu/tools/JVM/HeapOomPractice.java <br/>
+分析：通过Mat分析内存 <br/>
+解决：不使用的对象需要及时释放引用，没有引用的对象能被GC回收 <br/>
+常见原因：在集合类中存放大量对象 <br/>
 
-解决：不使用的对象需要及时释放引用，没有引用的对象能被GC回收
-常见原因：在集合类中存放大量对象
+* 2，Meta OOM
+代码地址：https://github.com/sesamegu/snippets/blob/master/src/main/java/com/mikegu/tools/JVM/MetaOomPractice.java <br/>
+分析：通过Mat分析内存；也可以用BTrace <br/>
+解决：不合理的创建了大量的class，且不能被回收； <br/>
+常见原因：java调用动态语言如groovy时容易采坑；用class想看的类库cglib、asm动态创建了大量类； <br/>
 
-2，Meta OOM
-代码地址：
-分析：通过Mat分析内存；也可以用BTrace
-解决：不合理的创建了大量的class，且不能被回收；
-常见原因：java调用动态语言如groovy时容易采坑；用class想看的类库cglib、asm动态创建了大量类；
+* 3，Native OOM
+代码地址：https://github.com/sesamegu/snippets/blob/master/src/main/java/com/mikegu/tools/JVM/NativeOomPractice.java <br/>
+分析：btrace追踪ByteBuffer;Google perftools工具  <br/>
+解决：及时释放不使用的native内存 <br/>
+常见原因：使用了ByteBuffer的direct功能或者通过JNI使用本地C++类库 <br/>
 
-3，Native OOM
-代码地址：
-分析：btrace追踪ByteBuffer;Google perftools工具 
-解决：及时释放不使用的native内存
-常见原因：使用了ByteBuffer的direct功能或者通过JNI使用本地C++类库
+* 4，DeadLock
+代码地址：https://github.com/sesamegu/snippets/blob/master/src/main/java/com/mikegu/tools/JVM/DeadLockPractice.java <br/>
+分析：用jstack分析线程堆栈，有环形等待锁 <br/>
+解决：打破死锁的一个条件：锁有序 <br/>
+常见原因：多处代码加锁顺序不一致 <br/>
 
-4，DeadLock
-代码地址：
-分析：用jstack分析线程堆栈，有环形等待锁
-解决：打破死锁的一个条件：锁有序
-常见原因：多处代码加锁顺序不一致
+* 5，CPU 100%
+代码地址：https://github.com/sesamegu/snippets/blob/master/src/main/java/com/mikegu/tools/JVM/CpuHighPractice.java <br/>
+分析：用top -p -H找到消费cpu的线程ID，在jstack中找到对于的线程ID，就能定位到cpu消耗在哪里 <br/>
+解决：cpu100%很多时候是不合理的死循环，找到对应的逻辑进行调整 <br/>
+常见原因：死循环 <br/>
 
-5，CPU 100%
-代码地址：
-分析：用top -p -H找到消费cpu的线程ID，在jstack中找到对于的线程ID，就能定位到cpu消耗在哪里
-解决：cpu100%很多时候是不合理的死循环，找到对应的逻辑进行调整
-常见原因：死循环
-
-6，StackOverflow
-代码地址：
-分析：java 线程的独有的栈溢出；
-解决：找到为什么需要这么深的递归，解决之
-常见原因：深递归
+* 6，StackOverflow
+代码地址：https://github.com/sesamegu/snippets/blob/master/src/main/java/com/mikegu/tools/JVM/StackOverflowPractice.java <br/>
+分析：java 线程的独有的栈溢出； <br/>
+解决：找到为什么需要这么深的递归，解决之 <br/>
+常见原因：深递归 <br/>
